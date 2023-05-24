@@ -20,17 +20,3 @@ export const jediListActions = {
         payload: jedis
     })
 };
-// export const addJedi = (id: number, name: string) => ({
-//     type: ADD_JEDI,
-//     payload: {id, name}
-// });
-//
-// export const removeJedi = (id: number) => ({
-//     type: REMOVE_JEDI,
-//     payload: {id}
-// });
-//
-// export const loadJedis = (jedis: Jedi[]) => ({
-//     type: LOAD_JEDIS,
-//     payload: jedis
-// });
