@@ -3,6 +3,7 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import {Jedi} from "../../store/models/jedi.model";
 import {AppState} from "../../app.state";
+import {jediListActions} from "../../store/actions/jedi-list.actions";
 
 @Component({
     selector: 'app-jedi-list',
@@ -19,24 +20,15 @@ export class JediListComponent {
     }
 
     add(): void {
-        this.store.dispatch({
-            type: 'ADD_JEDI',
-            payload: {id: this.counter++, name: this.newJediName},
-        });
+        this.store.dispatch(jediListActions.add(this.counter++, this.newJediName));
         this.newJediName = '';
     }
 
     remove(id: number): void {
-        this.store.dispatch({
-            type: 'REMOVE_JEDI',
-            payload: {id},
-        });
+        this.store.dispatch(jediListActions.remove(id));
     }
 
     clear(): void {
-        this.store.dispatch({
-            type: 'LOAD_JEDIS',
-            payload: [],
-        });
+        this.store.dispatch(jediListActions.load([]));
     }
 }
