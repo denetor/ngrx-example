@@ -2,7 +2,7 @@
     <h2>Jedi list</h2>
     <ul>
         <li *ngFor="let jedi of list$ | async">
-            {{ jedi.name }} <button (click)="remove(jedi.id)">remove</button>
+            {{ jedi.id }} - {{ jedi.name }} <button (click)="remove(jedi.id)">remove</button>
         </li>
     </ul>
     <div>
